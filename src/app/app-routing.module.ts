@@ -26,7 +26,15 @@ const routes: Routes = [
   {
     path: 'ongsign',
     loadChildren: () => import('./pages/ongsign/ongsign.module').then( m => m.OngsignPageModule)
+  },  {
+    path: 'feed',
+    loadChildren: () => import('./pages/feed/feed.module').then( m => m.FeedPageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+
 ];
 
 @NgModule({
