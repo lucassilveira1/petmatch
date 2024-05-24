@@ -1,7 +1,16 @@
 <ion-content [fullscreen]="true">
-  <img src="../../assets/backgrounds/home.png" alt="" id="bg-img" />
-  <div id="container">
-    <p id="title"><span>PET</span>MATCH</p>
-    <h1><a routerLink="/login">Clique</a></h1>
+  <div class="background">
+    <div class="container">
+      <h1 id="title"><span>PET</span>MATCH</h1>
+      <form>
+        <input type="text" placeholder="E-Mail" id="input" />
+        <input type="text" placeholder="Senha" id="input" />
+        <button class="button">LOGIN</button>
+      </form>
+      <span class="register"
+        >Ainda não tem uma conta? <br />
+        <span id="link"><a routerLink="/signup">Cadastre-se aqui!</a></span>
+      </span>
+    </div>
   </div>
 </ion-content>
