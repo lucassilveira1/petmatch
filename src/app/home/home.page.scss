@@ -1,16 +1,85 @@
-*{
-  font-family: 'Inter';
-  font-weight: bold;
+* {
+  font-family: "Inter";
+  max-width: 2400px;
+  max-height: 1080px;
 }
 
-#title span{
-  color: #EAF000;
+.background {
+  background-image: url(../../assets/backgrounds/Tela-Login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
+
 #title {
+  font-weight: bold;
+  font-size: 32px;
   text-shadow: #000000d5 1px 0 10px;
+  margin-bottom: 200px;
+  letter-spacing: 4px;
 }
 
-#container {
+#title span {
+  color: #eaf000;
+}
+
+#title h1 {
+  color: #ffffff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  gap: 15px;
+  padding: 40px 20px;
+}
+
+#input {
+  border-radius: 15px;
+  color: #ffffff;
+  border: 4px solid #ffffff;
+  text-align: center;
+  width: 360px;
+  height: 50px;
+  background: transparent;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  letter-spacing: 2px;
+}
+
+input::placeholder {
+  font-weight: bold;
+  opacity: 1;
+  color: #ffffff;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+input::placeholder:active {
+  opacity: 0;
+}
+
+.button {
+  font-weight: bold;
+  font-size: 15px;
+  color: #464646;
+  background-color: #eaf000;
+  border-radius: 15px;
+  width: 220px;
+  height: 37px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+.container {
   text-align: center;
 
   position: absolute;
@@ -20,27 +89,17 @@
   transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 32px;
-  line-height: 22px;
-
-  color: #FFFFFF;
-
-  
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-#bg-img {
+img {
   width: 100%;
   height: 100%;
+}
+
+.register {
+  font-weight: bold;
+  text-shadow: #000000d5 1px 0 10px;
+}
+
+.register #link a {
+  text-decoration: none;
+  color: #eaf000;
 }

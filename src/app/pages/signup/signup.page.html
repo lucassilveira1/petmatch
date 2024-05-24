@@ -1,26 +1,23 @@
 <ion-content [fullscreen]="true">
-    <div class="image">
-        <img src="../../../assets/backgrounds/register.svg" alt="" />
-        <div class="container">
-            <h1>Crie sua conta <br />agora mesmo!</h1>
-            <h2>
-                Já possui conta? <br /><span
-                    ><a routerLink="/login">Faça Login aqui!</a></span
-                >
-            </h2>
-            <form>
-                <input type="text" placeholder="Nome Completo" id="input" />
-                <input type="text" placeholder="E-Mail" id="input" />
-                <input type="text" placeholder="CPF" id="input" />
-                <input type="password" placeholder="Senha" id="input" />
-                <input type="date" id="input" />
-                <button class="button">CADASTRAR</button>
-            </form>
-            <h2 class="ong">
-                Possui uma ONG ou Lar de Adoção? <br /><span
-                    ><a routerLink="/ongsign">Cadastre aqui!</a></span
-                >
-            </h2>
-        </div>
+  <div class="background">
+    <div class="container">
+      <h1>Crie sua conta <br />agora mesmo!</h1>
+      <h2>
+        Já possui conta? <br /><span
+          ><a routerLink="/home">Faça Login aqui!</a></span
+        >
+      </h2>
+      <form>
+        <input type="text" placeholder="Nome Completo" id="input" />
+        <input type="text" placeholder="E-Mail" id="input" />
+        <input type="text" placeholder="CPF" id="input" />
+        <input type="password" placeholder="Senha" id="input" />
+        <input type="date" id="input" />
+        <button class="button">CADASTRAR</button>
+      </form>
+      <h2 class="ong">
+        Possui uma ONG?<br /><span><a routerLink="#">Cadastre aqui!</a></span>
+      </h2>
     </div>
+  </div>
 </ion-content>
