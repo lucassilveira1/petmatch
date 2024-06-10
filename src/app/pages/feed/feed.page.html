@@ -1,9 +1,9 @@
 <ion-content [fullscreen]="true">
-  <div class="background">
     <div class="container">
       <div class="card-row">
         <h1>oi</h1>
+        <p>Olá, {{ userData?.displayName || 'usuário'}}</p>
+        <ion-button (click)="deslogar()">Deslogar</ion-button>
       </div>
     </div>
-  </div>
 </ion-content>

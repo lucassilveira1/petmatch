@@ -1,15 +1,13 @@
-* {
-  font-family: "Inter";
-  max-width: 2400px;
-  max-height: 1080px;
-}
-
-.background {
-  background-image: url(../../assets/backgrounds/Tela-Login.png);
-  background-repeat: no-repeat;
+ion-content {
+  --ion-background-color: transparent;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../assets/backgrounds/Tela-Login.png');
   background-size: cover;
-  width: 100%;
-  height: 100%;
+  background-position: center;
 }
 
 #title {
@@ -28,7 +26,7 @@
   color: #ffffff;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;

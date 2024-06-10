@@ -2,11 +2,12 @@
   <div class="background">
     <div class="container">
       <h1 id="title"><span>PET</span>MATCH</h1>
-      <form>
-        <input type="text" placeholder="E-Mail" id="input" />
-        <input type="text" placeholder="Senha" id="input" />
-        <button class="button">LOGIN</button>
-      </form>
+      <div class="login-form">
+        <input [(ngModel)]="email" type="text" placeholder="E-Mail" id="input" />
+        <input [(ngModel)]="password" type="password" placeholder="Senha" id="input" />
+        <button class="button" (click)="login()">LOGIN</button>
+        <ion-button (click)="googleLogin()">Login with Google</ion-button>
+      </div>
       <span class="register"
         >Ainda não tem uma conta? <br />
         <span id="link"><a routerLink="/signup">Cadastre-se aqui!</a></span>
