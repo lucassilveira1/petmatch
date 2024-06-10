@@ -1,0 +1,87 @@
+ion-content {
+    --ion-background-color: transparent;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../../assets/backgrounds/feed.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .info-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .info-row label {
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .info-row input {
+    padding: 10px;
+    width: 100%;
+    max-width: 360px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    background: transparent;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    letter-spacing: 2px;
+  }
+  
+  .info-row input::placeholder {
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .info-row input:focus {
+    box-shadow: none;
+    border: 4px solid #ffffff;
+    outline: none;
+  }
+  
+  .info-row input::placeholder:active {
+    opacity: 0;
+  }
+  

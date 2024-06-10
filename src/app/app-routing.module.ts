@@ -23,11 +23,6 @@ const routes: Routes = [
       import('./pages/petinfo/petinfo.module').then((m) => m.PetinfoPageModule),
   },
   {
-    path: 'ongsign',
-    loadChildren: () =>
-      import('./pages/ongsign/ongsign.module').then((m) => m.OngsignPageModule),
-  },
-  {
     path: 'feed',
     loadChildren: () =>
       import('./pages/feed/feed.module').then((m) => m.FeedPageModule),
