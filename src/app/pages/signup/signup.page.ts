@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/services/authentication/auth.service';
 export class SignupPage implements OnInit {
 
   successMessage: boolean = false;
+  errorMessage: string = '';
 
   user: any = {
     nomeCompleto: '',
@@ -66,10 +67,43 @@ export class SignupPage implements OnInit {
     }
   };
 
+  validarFormulario() {
+    if (!this.user.nomeCompleto || !this.user.email || !this.user.telefone || !this.user.password || !this.user.confirmPassword ||
+        !this.user.cep || !this.user.endereco || !this.user.numero || !this.user.cidade) {
+      this.errorMessage = 'Todos os campos são obrigatórios.';
+      return false;
+    }
+
+    if (this.user.tipo === 'comum' && (!this.user.cpf || this.user.cpf.length !== 11)) {
+      this.errorMessage = 'CPF inválido.';
+      return false;
+    }
+
+    if (this.user.tipo === 'lar' && (!this.user.cnpj || this.user.cnpj.length !== 14)) {
+      this.errorMessage = 'CNPJ inválido.';
+      return false;
+    }
+
+    if (this.user.password !== this.user.confirmPassword) {
+      this.errorMessage = 'As senhas não coincidem.';
+      return false;
+    }
+
+    this.errorMessage = '';
+    return true;
+  }
+
   async registrar() {
+    if (!this.validarFormulario()) {
+      return;
+    }
       await this.authService.register(this.user);
       this.clearForm();
-      this.router.navigate(['/home']);
+      this.successMessage = true;
+      setTimeout(() => {
+        this.successMessage = false;
+        this.router.navigate(['/home']);
+      }, 3000);
   }
 
   clearForm() {

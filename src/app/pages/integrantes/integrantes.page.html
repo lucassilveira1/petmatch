@@ -1,0 +1,39 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>MENU</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <p><a href="/feed" class="link">Feed</a></p>
+    <p><a href="/profile" class="link">Perfil</a></p>
+    <p (click)="deslogar()">Logout</p>
+  </ion-content>
+  
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Integrantes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="team-container">
+    <div class="member lucas">
+      <video src="../../../assets/videos/vasconcio.mp4" controls></video>
+      <span>Lucas Vascão</span>
+    </div>
+    <div class="member breno">
+      <img src="../../../assets/integrantes/Breno.png" alt="Breno">
+      <span>Breno Alves</span>
+    </div>
+    <div class="member alvaro">
+      <img src="../../../assets/integrantes/Alvaro.jpg" alt="Alvaro">
+      <span>Alvaro Pena</span>
+    </div>
+  </div>
+</ion-content>
