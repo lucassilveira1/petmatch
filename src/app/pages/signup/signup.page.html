@@ -5,32 +5,33 @@
       <h2>
         Já tem uma conta? <br /><span><a routerLink="/home">Faça Login aqui!</a></span>
       </h2>
-        <div class="register-form">
-          <select [(ngModel)]="user.tipo" name="tipo" class="input" required>
-            <option value="comum">Usuário Comum</option>
-            <option value="lar">Lar de Adoção</option>
-          </select>
-          <input type="text" placeholder="Nome Completo" [(ngModel)]="user.nomeCompleto" name="nomeCompleto" class="input" required />
-          <input type="email" placeholder="E-mail" [(ngModel)]="user.email" name="email" class="input" required />
-          <div class="input-row">
-            <input type="text" placeholder="Telefone" [(ngModel)]="user.telefone" name="telefone" class="input half" required />
-            <input *ngIf="user.tipo === 'comum'" type="text" placeholder="CPF" [(ngModel)]="user.cpf" name="cpf" class="input half" required />
-            <input *ngIf="user.tipo === 'lar'" type="text" placeholder="CNPJ" [(ngModel)]="user.cnpj" name="cnpj" class="input half" required />
-          </div>
-          <div class="input-row">
-            <input type="password" placeholder="Senha" [(ngModel)]="user.password" name="password" class="input half" required />
-            <input type="password" placeholder="Confirmar Senha" [(ngModel)]="user.confirmPassword" name="confirmPassword" class="input half" required />
-          </div>
-          <input *ngIf="user.tipo === 'comum'" type="date" [(ngModel)]="user.dataNascimento" name="dataNascimento" class="input" required />
-          <input type="text" placeholder="CEP" [(ngModel)]="user.cep" name="cep" class="input" (input)="buscarEndereco()" required />
-          <input type="text" placeholder="Endereço" [(ngModel)]="user.endereco" name="endereco" class="input" required />
-          <div class="input-row">
-            <input type="text" placeholder="Número" [(ngModel)]="user.numero" name="numero" class="input half" required />
-            <input type="text" placeholder="Cidade" [(ngModel)]="user.cidade" name="cidade" class="input half" required />
-          </div>
-          <button type="submit" class="button" (click)="registrar()">Cadastre-se</button>
-          <p id="success" *ngIf="successMessage === true">Cadastro realizado com sucesso!</p>
-        </div>        
+      <div class="register-form">
+        <select [(ngModel)]="user.tipo" name="tipo" class="input" required>
+          <option value="comum">Usuário Comum</option>
+          <option value="lar">Lar de Adoção</option>
+        </select>
+        <input type="text" placeholder="Nome Completo" [(ngModel)]="user.nomeCompleto" name="nomeCompleto" class="input" required />
+        <input type="email" placeholder="E-mail" [(ngModel)]="user.email" name="email" class="input" required />
+        <div class="input-row">
+          <input type="text" placeholder="Telefone" [(ngModel)]="user.telefone" name="telefone" class="input half" mask="(00) 90000-0000" required />
+          <input *ngIf="user.tipo === 'comum'" type="text" placeholder="CPF" [(ngModel)]="user.cpf" name="cpf" class="input half" maxlength="11" mask="000.000.000-00" required />
+          <input *ngIf="user.tipo === 'lar'" type="text" placeholder="CNPJ" [(ngModel)]="user.cnpj" name="cnpj" class="input half" mask="00.000.000/0000-00" required />
+        </div>
+        <div class="input-row">
+          <input type="password" placeholder="Senha" [(ngModel)]="user.password" name="password" class="input half" required />
+          <input type="password" placeholder="Confirmar Senha" [(ngModel)]="user.confirmPassword" name="confirmPassword" class="input half" required />
+        </div>
+        <input *ngIf="user.tipo === 'comum'" type="date" [(ngModel)]="user.dataNascimento" name="dataNascimento" class="input" required />
+        <input type="text" placeholder="CEP" [(ngModel)]="user.cep" name="cep" class="input" maxlength="8" (input)="buscarEndereco()" required />
+        <input type="text" placeholder="Endereço" [(ngModel)]="user.endereco" name="endereco" class="input" required />
+        <div class="input-row">
+          <input type="text" placeholder="Número" [(ngModel)]="user.numero" name="numero" class="input half" required />
+          <input type="text" placeholder="Cidade" [(ngModel)]="user.cidade" name="cidade" class="input half" required />
+        </div>
+        <button type="submit" class="button" (click)="registrar()">Cadastre-se</button>
+        <p id="success" *ngIf="successMessage">Cadastro realizado com sucesso!</p>
+        <p id="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+      </div>
     </div>
   </div>
 </ion-content>

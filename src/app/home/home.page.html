@@ -7,6 +7,7 @@
         <input [(ngModel)]="password" type="password" placeholder="Senha" id="input" />
         <button class="button" (click)="login()">LOGIN</button>
         <ion-button (click)="googleLogin()">Login with Google</ion-button>
+        <p *ngIf="successMessage === true">Logado com sucesso!</p>
       </div>
       <span class="register"
         >Ainda não tem uma conta? <br />

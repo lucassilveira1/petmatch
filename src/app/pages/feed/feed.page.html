@@ -1,9 +1,79 @@
-<ion-content [fullscreen]="true">
-    <div class="container">
-      <div class="card-row">
-        <h1>oi</h1>
-        <p>Olá, {{ userData?.displayName || 'usuário'}}</p>
-        <ion-button (click)="deslogar()">Deslogar</ion-button>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>MENU</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <p><a href="/profile" class="link">Perfil</a></p>
+    <p><a href="/integrantes" class="link">Integrantes</a></p>
+    <p (click)="deslogar()">Logout</p>
+  </ion-content>
+  
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Feed</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card *ngFor="let cat of cats">
+      <ion-card-content>
+        <img [src]="cat.url" alt="Cat">
+      </ion-card-content>
+      <div class="subtitle-content">
+        <ion-card-subtitle class="subtitle">Nome: {{ cat.catName }}</ion-card-subtitle>
+        <ion-card-subtitle class="subtitle">Idade: {{ cat.age }}</ion-card-subtitle>
+        <div class="heart-icon">
+          <span (click)="toggleFavorite(cat)">
+            <ion-icon 
+              name="heart" 
+              size="large" 
+              aria-label="favorite" 
+              aria-hidden="true" 
+              [ngClass]="{'favorite': cat.isFavorite}"
+            >
+            </ion-icon> 
+          </span>
+        </div>
       </div>
-    </div>
-</ion-content>
+    </ion-card>
+  
+    <ion-card *ngFor="let dog of dogs">
+      <ion-card-content>
+        <img [src]="dog.url" alt="Dog">
+      </ion-card-content>
+      <div class="subtitle-content">
+        <ion-card-subtitle class="subtitle">Nome: {{ dog.dogName }}</ion-card-subtitle>
+        <ion-card-subtitle class="subtitle">Idade: {{ dog.age }}</ion-card-subtitle>
+        <div class="heart-icon">
+          <span (click)="toggleFavorite(dog)">
+            <ion-icon 
+              name="heart" 
+              size="large" 
+              aria-label="favorite" 
+              aria-hidden="true"
+              [ngClass]="{'favorite': dog.isFavorite}"
+            >
+            </ion-icon> 
+          </span>
+        </div>
+      </div>
+    </ion-card>
+  </ion-content>
+  
+  <!-- <ion-footer>
+    <ion-toolbar>
+      <ion-button expand="block" color="danger" (click)="deslogar()">
+        Logout
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer> -->
+  
+</div>
+
